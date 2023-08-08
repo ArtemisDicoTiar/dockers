@@ -2,7 +2,14 @@ version: "3.9"
 services:
   jongyoon:
     build: .
-    runtime: nvidia
+    # runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     ipc: host
     tty: true
     restart: always
