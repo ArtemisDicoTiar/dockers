@@ -20,5 +20,5 @@ services:
       - "30022:22"  # port for ssh
     volumes:
       - ${BASE_DIR}/jongyoon/.cache:$HOME/.cache
-      - ${BASE_DIR}/jongyoon/.cache:$HOME/.virtualenvs
+      - ${BASE_DIR}/jongyoon/.virtualenvs:$HOME/.virtualenvs
       - ${BASE_DIR}/jongyoon/docker_volume:/workspace
