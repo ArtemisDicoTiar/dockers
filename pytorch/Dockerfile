@@ -1,5 +1,6 @@
 FROM nvcr.io/nvidia/pytorch:23.04-py3
 RUN apt-get update
+RUN apt update
 
 # support ssh connection
 RUN apt-get install -y openssh-server gpustat

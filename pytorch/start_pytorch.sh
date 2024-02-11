@@ -1,3 +1,5 @@
-docker build -t jongyoon .
-docker run --ipc=host -p 30022:22 --name=jongyoon --gpus all -v /home/sonic/jongyoon/docker_volume:/workspace -dit jongyoon
-docker exec -it jongyoon /bin/zsh
+port=$1
+name=$2
+docker build -t ${name} .
+docker run --ipc=host -p ${port}:22 --name=${name} --gpus all -v /home/sonic/${name}/docker_volume:/workspace -dit ${name} 
+docker exec -it ${name} /bin/zsh
