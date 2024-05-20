@@ -38,20 +38,20 @@ RUN alias ll="eza -al --group-directories-first" >> ~/.bashrc
 RUN alias lt="eza -al --sort=modified" >> ~/.zshrc
 RUN alias lt="eza -al --sort=modified" >> ~/.bashrc
 
-RUN echo -e "# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'catppuccin/tmux'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-
-set -g @catppuccin_flavour 'mocha'
-
-# Other examples:
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
+RUN echo $'# List of plugins \n\
+set -g @plugin 'tmux-plugins/tpm' \n\
+set -g @plugin 'catppuccin/tmux' \n\
+set -g @plugin 'tmux-plugins/tmux-sensible' \n\
+\n\
+set -g @plugin 'tmux-plugins/tmux-resurrect' \n\
+set -g @plugin 'tmux-plugins/tmux-continuum' \n\
+\n\
+set -g @catppuccin_flavour 'mocha' \n\
+\n\
+# Other examples: \n\
+\n\
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf) \n\
+run '~/.tmux/plugins/tpm/tpm' \n\
 " > ~/.tmux.conf
 
 # using custom env set
