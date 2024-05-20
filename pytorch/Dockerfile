@@ -52,7 +52,7 @@ set -g @catppuccin_flavour 'mocha' \n\
 \n\
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf) \n\
 run '~/.tmux/plugins/tpm/tpm' \n\
-" > ~/.tmux.conf
+' > ~/.tmux.conf
 
 # using custom env set
 RUN git clone https://github.com/TPFRL/envset.git
