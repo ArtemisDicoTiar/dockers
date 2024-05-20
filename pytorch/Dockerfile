@@ -38,6 +38,9 @@ RUN alias ll="eza -al --group-directories-first" >> ~/.bashrc
 RUN alias lt="eza -al --sort=modified" >> ~/.zshrc
 RUN alias lt="eza -al --sort=modified" >> ~/.bashrc
 
+# installing tmux plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 RUN echo $'# List of plugins \n\
 set -g @plugin 'tmux-plugins/tpm' \n\
 set -g @plugin 'catppuccin/tmux' \n\
