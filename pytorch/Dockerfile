@@ -21,8 +21,8 @@ RUN chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 RUN apt update
 RUN apt install -y eza
 
-RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
-RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
+# RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
+# RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
 
 RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.zshrc
 RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.bashrc
@@ -38,21 +38,26 @@ RUN alias ll="eza -al --group-directories-first" >> ~/.bashrc
 RUN alias lt="eza -al --sort=modified" >> ~/.zshrc
 RUN alias lt="eza -al --sort=modified" >> ~/.bashrc
 
-RUN echo $'# List of plugins \n\
-set -g @plugin 'tmux-plugins/tpm' \n\
-set -g @plugin 'catppuccin/tmux' \n\
-set -g @plugin 'tmux-plugins/tmux-sensible' \n\
-\n\
-set -g @plugin 'tmux-plugins/tmux-resurrect' \n\
-set -g @plugin 'tmux-plugins/tmux-continuum' \n\
-\n\
-set -g @catppuccin_flavour 'mocha' \n\
-\n\
-# Other examples: \n\
-\n\
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf) \n\
-run '~/.tmux/plugins/tpm/tpm' \n\
-' > ~/.tmux.conf
+#RUN echo $'# List of plugins \n\
+# set -g @plugin 'tmux-plugins/tpm' \n\
+# set -g @plugin 'catppuccin/tmux' \n\
+# set -g @plugin 'tmux-plugins/tmux-sensible' \n\
+# \n\
+# set -g @plugin 'tmux-plugins/tmux-resurrect' \n\
+# set -g @plugin 'tmux-plugins/tmux-continuum' \n\
+# \n\
+# set -g @catppuccin_flavour 'mocha' \n\
+# \n\
+# # Other examples: \n\
+# \n\
+# # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf) \n\
+# run '~/.tmux/plugins/tpm/tpm' \n\
+# ' > ~/.tmux.conf
+
+# tmux plugin
+COPY ./.tmux.conf ~/.tmux.conf
+RUN tmux source-file ~/.tmux.conf
+RUN sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 # using custom env set
 RUN git clone https://github.com/TPFRL/envset.git
