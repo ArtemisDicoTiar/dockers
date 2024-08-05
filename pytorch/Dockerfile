@@ -21,6 +21,9 @@ RUN chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
 RUN apt update
 RUN apt install -y eza
 
+# ts install
+WORKDIR /root
+
 # RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
 # RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
 
@@ -65,8 +68,6 @@ WORKDIR envset
 RUN chmod +x envset.sh
 RUN zsh envset.sh
 
-# ts install
-WORKDIR /root
 RUN git clone https://github.com/ArtemisDicoTiar/task-spooler.git
 WORKDIR task-spooler
 RUN ./install_cmake
