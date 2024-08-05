@@ -58,8 +58,8 @@ RUN alias lt="eza -al --sort=modified" >> ~/.bashrc
 # ' > ~/.tmux.conf
 
 # tmux plugin
-COPY .tmux.conf ~/.tmux.conf
-RUN tmux source-file ~/.tmux.conf
+COPY .tmux.conf /root/.tmux.conf
+RUN tmux source-file /root/.tmux.conf
 RUN sh ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 # using custom env set
