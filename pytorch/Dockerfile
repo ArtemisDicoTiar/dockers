@@ -17,7 +17,8 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 # install custom plugins
 RUN apt-get install -y tmux
 
-RUN cat .zshrc >> ./.zshrc
+COPY .zshrc .zshrc-install
+RUN cat .zshrc-install >> ./.zshrc
 
 
 ## installing eza
