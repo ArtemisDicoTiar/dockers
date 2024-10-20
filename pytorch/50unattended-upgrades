@@ -1,0 +1,3 @@
+Unattended-Upgrade::Package-Blacklist {
+  "nvidia-*.";
+}
