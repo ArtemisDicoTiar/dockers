@@ -15,7 +15,7 @@ RUN apt-get install -y zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 # install custom plugins
-RUN apt-get install -y gpustat fzf bat gpg tmux
+RUN apt-get install -y gpustat tmux
 
 ## installing eza
 # RUN mkdir -p /etc/apt/keyrings
