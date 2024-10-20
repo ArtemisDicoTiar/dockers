@@ -25,10 +25,21 @@ CV() {
   echo "CUDA_VISIBLE_DEVICES set to $CUDA_VISIBLE_DEVICES"
 }
 
-alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-alias ld="eza -lD" >> ~/.zshrc
-alias lf="eza -lf --color=always | grep -v /" >> ~/.zshrc
-alias lh="eza -dl .* --group-directories-first" >> ~/.zshrc
-alias ll="eza -al --group-directories-first" >> ~/.zshrc
-alias lt="eza -al --sort=modified" >> ~/.zshrc
+
+PING() {
+        export send_msg=$@
+        export send_data='{
+    "msg_type": "text",
+    "content": {"text": "${send_msg}"}
+}'
+curl --location 'https://open.larksuite.com/open-apis/bot/v2/hook/dcee077f-4010-4aad-953a-510c7d48ebbe' \
+--header 'Content-Type: application/json' \
+--data "{
+    \"msg_type\": \"text\",
+    \"content\": {\"text\": \"${send_msg}\"}
+}"
+}
