@@ -30,8 +30,8 @@ RUN apt update
 RUN apt install -y eza
 
 # ts install
-RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
-RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
+# RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
+# RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
 
 RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.zshrc
 RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.bashrc
