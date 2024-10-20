@@ -1,3 +1,4 @@
 Unattended-Upgrade::Package-Blacklist {
   "nvidia-*.";
+  "libnvidia-";
 }
