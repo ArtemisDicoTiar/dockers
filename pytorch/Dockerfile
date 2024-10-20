@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:23.04-py3
+FROM nvcr.io/nvidia/pytorch:23.10-py3
 
 WORKDIR /root
 COPY 50unattended-upgrades ./50unattended-upgrades
