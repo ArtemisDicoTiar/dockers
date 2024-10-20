@@ -1,6 +1,5 @@
 FROM nvcr.io/nvidia/pytorch:23.10-py3
 
-WORKDIR /root
 # COPY 50unattended-upgrades ./50unattended-upgrades
 # RUN cat ./50unattended-upgrades >> /etc/apt/apt.conf.d/50unattended-upgrades
 RUN apt-get update
@@ -8,7 +7,7 @@ RUN apt update
 
 # support ssh connection
 RUN apt-get install -y openssh-server
-RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRoZotLogin yes/' /etc/ssh/sshd_config
+RUN sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config
     
 # using zsh
 RUN apt-get install -y zsh
@@ -30,6 +29,7 @@ RUN apt update
 RUN apt install -y eza
 
 # ts install
+WORKDIR /root
 # RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
 # RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
 
