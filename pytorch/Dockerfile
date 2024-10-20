@@ -18,30 +18,30 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 RUN apt-get install -y gpustat fzf bat gpg tmux
 
 ## installing eza
-RUN mkdir -p /etc/apt/keyrings
-RUN wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
-RUN echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | tee /etc/apt/sources.list.d/gierens.list
-RUN chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
-RUN apt update
-RUN apt install -y eza
+# RUN mkdir -p /etc/apt/keyrings
+# RUN wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
+# RUN echo "deb [signed-by=/etc/apt/keyrings/gierens.gpg] http://deb.gierens.de stable main" | tee /etc/apt/sources.list.d/gierens.list
+# RUN chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.list
+# RUN apt update
+# RUN apt install -y eza
 
 # ts install
 # RUN echo 'eval "$(fzf --zsh)"' >> ~/.zshrc
 # RUN echo 'eval "$(fzf --bash)"' >> ~/.bashrc
 
-RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.zshrc
-RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.bashrc
+# RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.zshrc
+# RUN echo 'alias ls="eza --color=always --long --git --icons=always --no-user --no-permissions"' >> ~/.bashrc
 
-RUN alias ld="eza -lD" >> ~/.zshrc
-RUN alias ld="eza -lD" >> ~/.bashrc
-RUN alias lf="eza -lf --color=always | grep -v /" >> ~/.zshrc
-RUN alias lf="eza -lf --color=always | grep -v /" >> ~/.bashrc
-RUN alias lh="eza -dl .* --group-directories-first" >> ~/.zshrc
-RUN alias lh="eza -dl .* --group-directories-first" >> ~/.bashrc
-RUN alias ll="eza -al --group-directories-first" >> ~/.zshrc
-RUN alias ll="eza -al --group-directories-first" >> ~/.bashrc
-RUN alias lt="eza -al --sort=modified" >> ~/.zshrc
-RUN alias lt="eza -al --sort=modified" >> ~/.bashrc
+#RUN alias ld="eza -lD" >> ~/.zshrc
+#RUN alias ld="eza -lD" >> ~/.bashrc
+#RUN alias lf="eza -lf --color=always | grep -v /" >> ~/.zshrc
+#RUN alias lf="eza -lf --color=always | grep -v /" >> ~/.bashrc
+#RUN alias lh="eza -dl .* --group-directories-first" >> ~/.zshrc
+#RUN alias lh="eza -dl .* --group-directories-first" >> ~/.bashrc
+#RUN alias ll="eza -al --group-directories-first" >> ~/.zshrc
+#RUN alias ll="eza -al --group-directories-first" >> ~/.bashrc
+#RUN alias lt="eza -al --sort=modified" >> ~/.zshrc
+#RUN alias lt="eza -al --sort=modified" >> ~/.bashrc
 
 #RUN echo $'# List of plugins \n\
 # set -g @plugin 'tmux-plugins/tpm' \n\
