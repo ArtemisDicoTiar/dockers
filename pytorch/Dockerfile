@@ -1,8 +1,8 @@
 FROM nvcr.io/nvidia/pytorch:23.10-py3
 
 WORKDIR /root
-COPY 50unattended-upgrades ./50unattended-upgrades
-RUN cat ./50unattended-upgrades >> /etc/apt/apt.conf.d/50unattended-upgrades
+# COPY 50unattended-upgrades ./50unattended-upgrades
+# RUN cat ./50unattended-upgrades >> /etc/apt/apt.conf.d/50unattended-upgrades
 RUN apt-get update
 RUN apt update
 
